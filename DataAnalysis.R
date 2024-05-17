@@ -6,3 +6,9 @@ NMRUrineBin <- read_excel("C:/Users/ah437/OneDrive/Documents/Work/MasterDOMINO.x
 NMRBloodmM <-  read_excel("C:/Users/ah437/OneDrive/Documents/Work/MasterDOMINO.xlsx", sheet = "NMR Blood mM")
 
 # You will have to change file path depending on where you saved them 
+
+# Use the View command to see any dataset 
+View(MSUrine)
+summary(MSBlood)
+
+
