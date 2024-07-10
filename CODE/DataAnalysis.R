@@ -31,12 +31,12 @@ ggplot(data = MSBlood, mapping = aes(x= `AcylCarnitine 12:0`, y = `AcylCarnitine
   geom_point(mapping = aes(color = Day, shape = `(Control, treated etc.)`))
 
 filtered_data <- MSBlood %>%
-  filter(Day %in% c(1, 4, 14))
+  filter(Day %in% c(1, 4))
 
 All_delta_changes_D4_D1 <- filtered_data %>%
   group_by(ID, `(Control, treated etc.)`) %>%
   arrange(ID, Day) %>%
-  summarise(across(.cols = 23:(ncol(.)-2), ~.[Day == 4] - .[Day == 1], .names = "Delta_{.col}"), .groups = "drop")
+  summarise(across(.cols = 22:(ncol(.)-2), ~.[Day == 4] - .[Day == 1], .names = "Delta_{.col}"), .groups = "drop")
 
 View(All_delta_changes_D4_D1)
 
